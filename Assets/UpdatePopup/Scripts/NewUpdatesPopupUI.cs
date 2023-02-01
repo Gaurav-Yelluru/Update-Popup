@@ -105,7 +105,7 @@ namespace UpgradeSystem
                     int cmp = string.Compare(Application.version, latestGameData[0].max_version);
                     Debug.Log(Application.version);
 
-                    if (cmp != 0)
+                    if (cmp < 0)
                     {
                         // new update is available
                         int cmp1 = string.Compare(Application.version, latestGameData[0].min_version);
@@ -133,7 +133,6 @@ namespace UpgradeSystem
             // Add buttons click listeners :
             uiUpdateButton.onClick.AddListener ( ( ) => {
                 Application.OpenURL (appURL);
-                HidePopup( );
             });
         }
 
@@ -168,5 +167,4 @@ namespace UpgradeSystem
         }
 	   
    }
-
 }
